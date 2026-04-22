@@ -269,7 +269,7 @@ export const CONFIG_DATA = [
         formula: {
           text: "\\text{TIỀN HOÀN} = \\frac{\\text{Tổng Giá Trị} - 7\\%\\text{ Thuế} - 20{,}000\\text{ Phí Thiết Lập}}{\\text{Tổng Thời Gian Hiệu Lực Của Gói}} \\times \\text{Số Ngày Chưa Sử Dụng}",
           variables: [
-            { name: "thuế:", value: "45.500đ" },
+            { name: "thuế:", value: "7%" },
             {
               name: "Phí thiết lập:",
               value: "20.000đ (Tạo mail, OTP, hệ thống…)",
