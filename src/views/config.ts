@@ -8,7 +8,6 @@ import {
   CircleUserRound,
   CircleX,
   ClockFading,
-  Footprints,
   Landmark,
   Mails,
   SendHorizontal,
@@ -149,15 +148,15 @@ export const CONFIG_DATA = [
         title: "Phương thức bảo hành",
         subContents: [
           {
-            icon: Footprints,
+            icon: SendHorizontal,
             description: "Ưu tiên sửa trực tiếp tài khoản.",
           },
           {
-            icon: Footprints,
+            icon: SendHorizontal,
             description: "Nếu không xử lý được thì cấp tài khoản tương đương.",
           },
           {
-            icon: Footprints,
+            icon: SendHorizontal,
             description: "Không hoàn tiền ngay khi vẫn còn phương án bảo hành.",
           },
         ],
@@ -405,7 +404,7 @@ export const CONFIG_DATA = [
       "Việt Hà Premium Shop không chịu trách nhiệm trong các trường hợp sau:",
     subContents: [
       {
-        icon: null,
+        icon: CircleX,
         description: "Lỗi từ nền tảng gốc như Google, OpenAI, Netflix, v.v.",
       },
       {
@@ -487,7 +486,7 @@ export const SECTION_COLOR_MAP = {
     checkIcon: "",
     errorIcon: "",
     definitionsSection:
-      "border-teal-400/10 bg-teal-900/10 hover:bg-teal-50/10 hover:border-teal-400/50",
+      "border-teal-400/10 bg-teal-900/10 hover:bg-teal-800/10 hover:border-teal-400/50",
     definitionsTitle: "",
   },
   Indigo: {
@@ -497,7 +496,8 @@ export const SECTION_COLOR_MAP = {
     title: "text-indigo-300",
     checkIcon: "text-green-400",
     errorIcon: "text-red-400",
-    definitionsSection: "",
+    definitionsSection:
+      "border-indigo-400/10 bg-indigo-900/10 hover:bg-indigo-800/10 hover:border-indigo-400/50",
     definitionsTitle: "",
   },
   Sky: {
@@ -508,7 +508,7 @@ export const SECTION_COLOR_MAP = {
     checkIcon: "text-green-400",
     errorIcon: "text-red-400",
     definitionsSection:
-      "border-sky-400/10 bg-sky-900/10 hover:bg-sky-50/10 hover:border-sky-400/50",
+      "border-sky-400/10 bg-sky-900/10 hover:bg-sky-800/10 hover:border-sky-400/50",
     definitionsTitle: "",
   },
   Cyan: {
@@ -526,8 +526,8 @@ export const SECTION_COLOR_MAP = {
       "bg-fuchsia-900/5 border border-fuchsia-600/20 border-l-4 border-l-fuchsia-600 hover:bg-fuchsia-900/10 hover:border-fuchsia-600 [&:hover>div]:border-b-fuchsia-600",
     headerSection: "border-b border-b-fuchsia-600/20",
     title: "text-fuchsia-300",
-    checkIcon: "",
-    errorIcon: "",
+    checkIcon: "text-green-500",
+    errorIcon: "text-red-500",
     definitionsSection: "",
     definitionsTitle: "",
   },
@@ -536,8 +536,8 @@ export const SECTION_COLOR_MAP = {
       "bg-orange-900/5 border border-orange-600/20 border-l-4 border-l-orange-600 hover:bg-orange-900/10 hover:border-orange-600 [&:hover>div]:border-b-orange-600",
     headerSection: "border-b border-b-orange-600/20",
     title: "text-orange-300",
-    checkIcon: "",
-    errorIcon: "",
+    checkIcon: "text-green-500",
+    errorIcon: "text-red-500",
     definitionsSection: "",
     definitionsTitle: "",
   },

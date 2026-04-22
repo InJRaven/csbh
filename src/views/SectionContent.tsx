@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { CONFIG_DATA, SECTION_COLOR_MAP } from "./config";
 import { TriangleAlert } from "lucide-react";
-import { SubContent } from "./SubContent";
 import { BlockMath } from "react-katex";
 import clsx from "clsx";
 import "katex/dist/katex.min.css";
@@ -24,7 +23,7 @@ const SectionContent = () => {
         <div className="w-14 h-0.75 rounded-xs bg-linear-to-r from-(--blue) to-(--purple) mt-6 mx-auto"></div>
       </div>
       {/* ALERT */}
-      <div className="relative px-6 py-4.5 w-full border rounded-xl  backdrop-blur-md flex flex-col gap-3 items-start animate-[fadeUp_0.5s_ease_both] bg-amber-900/5 border-amber-600/20 border-l-4 border-l-amber-600">
+      <div className="relative px-6 py-4.5 w-full border rounded-xl  backdrop-blur-md flex flex-col gap-3 items-start animate-[fadeUp_0.5s_ease_both] bg-amber-900/5 border-amber-600/20 border-l-4 border-l-amber-600 hover:bg-amber-900/10 hover:border-amber-600 transition-colors duration-300">
         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-amber-500">
           <TriangleAlert className="size-30" />
         </div>
@@ -65,7 +64,6 @@ const SectionContent = () => {
               {item.subTitle && <h3>{item.subTitle}</h3>}
               {item.content &&
                 item.content.map((c) => {
-                  console.log(c);
                   return (
                     <div key={c.id} className="space-y-2">
                       <h4 className={clsx("font-bold text-lg", color.title)}>
@@ -103,7 +101,10 @@ const SectionContent = () => {
                             return (
                               <div
                                 key={i}
-                                className="w-full p-2 grid grid-cols-[0.2fr_1fr] grid-rows-2 gap-x-2 gap-y-0.5"
+                                className={clsx(
+                                  "w-full rounded-lg px-2 py-3 border grid grid-cols-[0.2fr_1fr] grid-rows-2 gap-x-2 gap-y-0.5 transition-colors duration-300",
+                                  color.definitionsSection,
+                                )}
                               >
                                 {Icon && (
                                   <Icon
@@ -163,13 +164,34 @@ const SectionContent = () => {
                   );
                 })}
               {item.subContents &&
-                item.subContents.map((c, i) => (
-                  <SubContent
-                    key={i}
-                    icon={c.icon}
-                    description={c.description}
-                  />
-                ))}
+                item.subContents.map((c, i) => {
+                  const Icon = c.icon;
+                  const name = Icon?.displayName ?? "";
+
+                  const checkIcons = [
+                    "ShieldCheck",
+                    "Check",
+                    "CircleCheck",
+                    "CircleCheckBig",
+                  ];
+                  const errorIcons = ["ShieldX", "Ban", "CircleX"];
+
+                  const iconClass = checkIcons.includes(name)
+                    ? color.checkIcon
+                    : errorIcons.includes(name)
+                      ? color.errorIcon
+                      : color.title;
+                  return (
+                    <div key={i} className="flex items-center gap-2">
+                      {Icon && (
+                        <span>
+                          <Icon className={clsx("size-5", iconClass)} />
+                        </span>
+                      )}
+                      <p>{c.description}</p>
+                    </div>
+                  );
+                })}
               {item.definitions && (
                 <div className="space-y-5">
                   {item.definitions.map((d, i) => {
