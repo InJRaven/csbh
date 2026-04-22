@@ -267,7 +267,7 @@ export const CONFIG_DATA = [
         hierarchyNumber: "4.3",
         title: "Công thức hoàn tiền",
         formula: {
-          text: "\\text{TIỀN HOÀN} = \\frac{\\text{Tổng Giá Trị - 7\\% Thuế - 20{,}000 Phí Thiết Lập}}{\\text{Tổng Thời Gian Hiệu Lực Của Gói}} \\times \\text{Số Ngày Chưa Sử Dụng}",
+          text: "\\text{TIỀN HOÀN} = \\frac{\\text{Tổng Giá Trị} - 7\\%\\text{ Thuế} - 20{,}000\\text{ Phí Thiết Lập}}{\\text{Tổng Thời Gian Hiệu Lực Của Gói}} \\times \\text{Số Ngày Chưa Sử Dụng}",
           variables: [
             { name: "thuế:", value: "45.500đ" },
             {

@@ -3,7 +3,7 @@ import { CONFIG_DATA, SECTION_COLOR_MAP } from "./config";
 import { TriangleAlert } from "lucide-react";
 import { BlockMath } from "react-katex";
 import clsx from "clsx";
-import "katex/dist/katex.min.css";
+
 
 const SectionContent = () => {
   return (
@@ -133,9 +133,7 @@ const SectionContent = () => {
                           )}
                         >
                           <div className="w-full border-b border-b-sky-400/40">
-                            <h4 className="font-extrabold!">
-                              <BlockMath math={c.formula.text} />
-                            </h4>
+                            <BlockMath math={c.formula.text} />
                           </div>
 
                           <div className="mt-2 space-y-1">
