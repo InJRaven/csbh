@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import { CONFIG_DATA, SECTION_COLOR_MAP } from "./config";
 import { TriangleAlert } from "lucide-react";
-import { BlockMath } from "react-katex";
-import clsx from "clsx";
 
+import clsx from "clsx";
+import { MathJax } from "better-react-mathjax";
 
 const SectionContent = () => {
   return (
@@ -129,11 +129,14 @@ const SectionContent = () => {
                       {c.formula?.text?.trim() && (
                         <div
                           className={clsx(
-                            "p-3 border rounded-lg border-sky-400/40 bg-sky-900/10 border-t-4 border-t-sky-500",
+                            "p-3 border rounded-lg pointer-events-none! select-none border-sky-400/40 bg-sky-900/10 border-t-4 border-t-sky-500",
                           )}
                         >
                           <div className="w-full border-b border-b-sky-400/40">
-                            <BlockMath math={c.formula.text} />
+                            <MathJax
+                              className="pointer-events-none! select-none"
+                              dynamic
+                            >{`$$${c.formula.text}$$`}</MathJax>
                           </div>
 
                           <div className="mt-2 space-y-1">
