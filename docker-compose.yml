@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build: .
+    container_name: frontend
+    restart: always
+    expose:
+      - "80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
